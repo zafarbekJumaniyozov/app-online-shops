@@ -14,9 +14,10 @@ import java.util.List;
 public class StudentController {
 
 private static final List<Student>students= Arrays.asList(
-        new Student(1,"Sardor Bobojonov "),
+        new Student(4,"Sardor Bobojonov "),
         new Student(2,"Odamboy Egamberdiyev"),
-        new Student(3,"Azizbek Jumaboyev ")
+        new Student(3,"Azizbek Jumaboyev "),
+        new Student(1,"Jumaniyozov Nizomjon ")
 
 );
 
