@@ -53,12 +53,13 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
         UserDetails NizomjonUser=User.builder()
                 .username("Nizomjon")
                 .password(passwordEncoder.encode("123"))
-                .roles(ADMINTRAINEE.name())
+                .roles(ADMIN.name())
                 .build();
      UserDetails XursandUser=User.builder()
                 .username("Xursand")
                 .password(passwordEncoder.encode("123"))
-                .roles(ADMIN.name())
+
+             .roles(ADMINTRAINEE.name())
                 .build();
         UserDetails ODAMBOYUser=User.builder()
                 .username("ODAMBOY")
