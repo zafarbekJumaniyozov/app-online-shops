@@ -11,8 +11,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
-import uz.teda.appOnlineShop.entity.enums.AplicationUserPermession;
-import uz.teda.appOnlineShop.entity.enums.ApplicationUserRole;
 
 import static uz.teda.appOnlineShop.entity.enums.ApplicationUserRole.*;
 
@@ -55,6 +53,11 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
         UserDetails NizomjonUser=User.builder()
                 .username("Nizomjon")
                 .password(passwordEncoder.encode("123"))
+                .roles(ADMINTRAINEE.name())
+                .build();
+     UserDetails XursandUser=User.builder()
+                .username("Xursand")
+                .password(passwordEncoder.encode("123"))
                 .roles(ADMIN.name())
                 .build();
         UserDetails ODAMBOYUser=User.builder()
@@ -96,7 +99,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 ALISHERUser,
                 ODAMBOYUser,
                 azizbek,
-                Zafarbek
+                Zafarbek,XursandUser
 
 
 
