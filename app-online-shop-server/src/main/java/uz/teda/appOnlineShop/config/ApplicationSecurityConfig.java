@@ -55,48 +55,57 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
         UserDetails jumaniyozovUser=User.builder()
                 .username("Jumaniyozov")
                 .password(passwordEncoder.encode("Password"))
-                .roles(CEO.name())
+//                .roles(CEO.name())
+                .authorities(CEO.getGrantedAuthority())
         .build();
         UserDetails NizomjonUser=User.builder()
                 .username("Nizomjon")
                 .password(passwordEncoder.encode("123"))
-                .roles(ADMIN.name())
+         //       .roles(ADMIN.name())
+                .authorities(ADMIN.getGrantedAuthority())
                 .build();
      UserDetails XursandUser=User.builder()
                 .username("Xursand")
                 .password(passwordEncoder.encode("123"))
 
-             .roles(ADMINTRAINEE.name())
+      //       .roles(ADMINTRAINEE.name())
+             .authorities(ADMINTRAINEE.getGrantedAuthority())
                 .build();
         UserDetails ODAMBOYUser=User.builder()
                 .username("ODAMBOY")
                 .password(passwordEncoder.encode("1234"))
-                .roles(KASSIR.name())
+      //          .roles(KASSIR.name())
+                .authorities(KASSIR.getGrantedAuthority())
                 .build();
         UserDetails ALISHERUser= User.builder()
                 .username("ALISHER")
                 .password(passwordEncoder.encode("12345"))
-                .roles(BUGALTER.name())
+      //          .roles(BUGALTER.name())
+                .authorities(BUGALTER.getGrantedAuthority())
                 .build();
         UserDetails azizbek = User.builder()
                 .username("AZIZBEK")
                 .password(passwordEncoder.encode("2234"))
-                .roles(MENAGER.name())
+        //        .roles(MENAGER.name())
+                .authorities(MENAGER.getGrantedAuthority())
                 .build();
         UserDetails SOBIRJONUser=User.builder()
                 .username("SOBIRJON")
                 .password(passwordEncoder.encode("3234"))
-                .roles(MOBILE_CEO.name())
+        //        .roles(MOBILE_CEO.name())
+                .authorities(MOBILE_CEO.getGrantedAuthority())
                 .build();
         UserDetails SobirUser=  User.builder()
                 .username("SOBIRJON S")
                 .password(passwordEncoder.encode("32345"))
-                .roles("MOBIL CEO ")
+       //         .roles("MOBIL CEO ")
+                .authorities(MOBILE_CEO.getGrantedAuthority())
                 .build();
     UserDetails Zafarbek=  User.builder()
                 .username("Zafarbek")
                 .password(passwordEncoder.encode("52345"))
-                .roles(STUDENT.name())
+       //         .roles(STUDENT.name())
+            .authorities(STUDENT.getGrantedAuthority())
                 .build();
         return new
                 InMemoryUserDetailsManager(
