@@ -23,6 +23,13 @@ public class StudentManagerController {
     System.out.println("getAllStudents");
         return students;
     }
+@GetMapping(path = "/{studentId}")
+    public Student getStudent(@PathVariable("studentId") Integer studentId) {
+    System.out.println("getStudent");
+        return students.stream().filter(student -> studentId.equals(student.getStudentId()))
+                .findAny()
+                .orElseThrow(()->new IllegalStateException("Student "+ studentId+" doesn't exist" ));
+}
 @PostMapping
     public void registrNewStudent(@RequestBody Student student) {
     System.out.println("registrNewStudent");
