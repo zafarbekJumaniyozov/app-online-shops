@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
-@RequestMapping("manegment/v1/students")
+@RequestMapping("management/api/v1/students")
 public class StudentManagerController {
 
 
@@ -20,21 +20,25 @@ public class StudentManagerController {
     );
 @GetMapping
     public List<Student> getAllStudents() {
-
+    System.out.println("getAllStudents");
         return students;
     }
 @PostMapping
     public void registrNewStudent(@RequestBody Student student) {
+    System.out.println("registrNewStudent");
         System.out.println(student);
 
     }
 @DeleteMapping(path = "{studentId}")
     public void deleteStudent(@PathVariable("studentId") Integer studentId) {
+    System.out.println("deleteStudent");
         System.out.println(studentId);
     }
 
-    @PutMapping
+    @PutMapping(path = "{studentId}")
     public void updateStudent(@PathVariable("studentId") Integer studentId,@RequestBody Student student) {
-        System.out.println(String.format("%s  %s",student, studentId));
+
+        System.out.println("updateStudent");
+    System.out.println(String.format("%s  %s%n", student,studentId));
     }
 }

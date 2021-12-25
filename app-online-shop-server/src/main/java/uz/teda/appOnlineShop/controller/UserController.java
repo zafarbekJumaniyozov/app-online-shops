@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import uz.teda.appOnlineShop.entity.User;
-import uz.teda.appOnlineShop.entity.User;
 
 import java.util.Arrays;
 import java.util.List;
